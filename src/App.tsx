@@ -1,128 +1,135 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import Home from './pages/Home';
+import Residential from './pages/Residential';
+import Commercial from './pages/Commercial';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
-      <div className="max-w-4xl mx-auto space-y-8">
-        {/* Header Section */}
-        <div className="text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Tailwind CSS v4 Demo
-          </h1>
-          <p className="text-xl text-gray-600">
-            Testing various Tailwind utility classes
-          </p>
-        </div>
-
-        {/* Card with Counter */}
-        <div className="bg-white rounded-lg shadow-xl p-8 border border-gray-200">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            Interactive Counter
-          </h2>
-          <div className="flex items-center justify-center gap-4">
-            <button
-              onClick={() => setCount(count - 1)}
-              className="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-            >
-              Decrease
-            </button>
-            <span className="text-4xl font-bold text-indigo-600 min-w-[100px] text-center">
-              {count}
-            </span>
-            <button
-              onClick={() => setCount(count + 1)}
-              className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-            >
-              Increase
-            </button>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
+      {/* Navigation */}
+      <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 sm:h-20 items-center">
+            <div className="flex items-center">
+              <Link 
+                to="/" 
+                className="text-xl sm:text-2xl font-serif font-bold text-gray-900 transition-all duration-300 hover:text-black hover:scale-105"
+              >
+                Angel Ortiz
+              </Link>
+            </div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-10">
+              <Link
+                to="/"
+                className={`font-serif font-medium text-base sm:text-lg transition-all duration-500 ${                  
+                  location.pathname === '/' 
+                    ? 'text-black relative after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black' 
+                    : 'text-gray-700 hover:text-black'
+                }`}
+              >
+                Home
+              </Link>
+              <Link
+                to="/residential"
+                className={`font-serif font-medium text-base sm:text-lg transition-all duration-500 ${                  
+                  location.pathname === '/residential' 
+                    ? 'text-black relative after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black' 
+                    : 'text-gray-700 hover:text-black'
+                }`}
+              >
+                Residential
+              </Link>
+              <Link
+                to="/commercial"
+                className={`font-serif font-medium text-base sm:text-lg transition-all duration-500 ${                  
+                  location.pathname === '/commercial' 
+                    ? 'text-black relative after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black' 
+                    : 'text-gray-700 hover:text-black'
+                }`}
+              >
+                Commercial
+              </Link>
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="flex items-center md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-gray-700 hover:text-black focus:outline-none transition-colors p-1"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {isMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-purple-500 text-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-bold mb-2">Purple Card</h3>
-            <p className="text-purple-100">
-              Hover over me to see the scale effect!
-            </p>
+        
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 animate-fadeIn">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <Link
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block px-3 py-3 rounded-md text-base sm:text-lg font-serif font-medium w-full text-left ${                  
+                  location.pathname === '/' 
+                    ? 'text-black bg-gray-50' 
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-black'
+                }`}
+              >
+                Home
+              </Link>
+              <Link
+                to="/residential"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block px-3 py-3 rounded-md text-base sm:text-lg font-serif font-medium w-full text-left ${                  
+                  location.pathname === '/residential' 
+                    ? 'text-black bg-gray-50' 
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-black'
+                }`}
+              >
+                Residential
+              </Link>
+              <Link
+                to="/commercial"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block px-3 py-3 rounded-md text-base sm:text-lg font-serif font-medium w-full text-left ${                  
+                  location.pathname === '/commercial' 
+                    ? 'text-black bg-gray-50' 
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-black'
+                }`}
+              >
+                Commercial
+              </Link>
+            </div>
           </div>
+        )}
+      </nav>
 
-          <div className="bg-orange-500 text-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-bold mb-2">Orange Card</h3>
-            <p className="text-orange-100">
-              Grid layout with responsive columns
-            </p>
-          </div>
-
-          <div className="bg-teal-500 text-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-bold mb-2">Teal Card</h3>
-            <p className="text-teal-100">
-              Beautiful gradient background above
-            </p>
-          </div>
-        </div>
-
-        {/* Flexbox Example */}
-        <div className="bg-white rounded-lg shadow-xl p-8">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-            Flexbox Alignment
-          </h2>
-          <div className="flex flex-wrap gap-4 justify-center items-center">
-            <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-medium">
-              Tag 1
-            </span>
-            <span className="px-4 py-2 bg-pink-100 text-pink-800 rounded-full font-medium">
-              Tag 2
-            </span>
-            <span className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full font-medium">
-              Tag 3
-            </span>
-            <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full font-medium">
-              Tag 4
-            </span>
-          </div>
-        </div>
-
-        {/* Typography Example */}
-        <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg shadow-xl p-8">
-          <h2 className="text-3xl font-bold mb-4">Typography Styles</h2>
-          <p className="text-lg leading-relaxed mb-4">
-            This is a paragraph with relaxed line height and large text size.
-            Tailwind CSS makes it easy to style your content.
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-indigo-100">
-            <li>Responsive design utilities</li>
-            <li>Customizable color palette</li>
-            <li>Flexbox and Grid support</li>
-            <li>Hover and focus states</li>
-          </ul>
-        </div>
-
-        {/* Button Variants */}
-        <div className="bg-white rounded-lg shadow-xl p-8">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-            Button Variations
-          </h2>
-          <div className="flex flex-wrap gap-4">
-            <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors">
-              Primary
-            </button>
-            <button className="px-6 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-md font-medium transition-colors">
-              Secondary
-            </button>
-            <button className="px-6 py-2 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-md font-medium transition-colors">
-              Outline
-            </button>
-            <button className="px-6 py-2 text-blue-600 hover:bg-blue-50 rounded-md font-medium transition-colors">
-              Ghost
-            </button>
-          </div>
-        </div>
+      {/* Main Content */}
+      <div className="pt-16 sm:pt-20">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/residential" element={<Residential />} />
+          <Route path="/commercial" element={<Commercial />} />
+          <Route path="/residential/:slug" element={<ProjectDetail />} />
+          <Route path="/commercial/:slug" element={<ProjectDetail />} />
+        </Routes>
       </div>
     </div>
-  )
+  );
 }
 
 export default App

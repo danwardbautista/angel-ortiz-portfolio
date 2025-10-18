@@ -79,7 +79,7 @@ const Residential = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-20">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fadeInUp">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900">Residential Works</h1>
@@ -96,7 +96,7 @@ const Residential = () => {
             <Link
               to={`/residential/${project.slug}`}
               key={project.id}
-              className="group relative overflow-hidden rounded-2xl shadow-xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 sm:hover:-translate-y-3 block aspect-[4/5] sm:aspect-auto"
+              className="group relative overflow-hidden rounded-2xl shadow-xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 sm:hover:-translate-y-3 block"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <LazyImage
@@ -104,11 +104,11 @@ const Residential = () => {
                 alt={project.name}
                 className="w-full h-48 sm:h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-end p-4 sm:p-6 md:p-8 md:transform md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-700">
-                <div className="transition-all duration-500 md:delay-200 opacity-100 md:group-hover:opacity-100 md:opacity-0">
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent flex items-end p-4 sm:p-6 md:p-8 lg:transform lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-700">
+                <div className="transition-all duration-500 lg:delay-200 opacity-100 lg:group-hover:opacity-100 lg:opacity-0">
                   <h3 className="text-lg sm:text-xl font-serif font-bold text-white">{project.name}</h3>
                   <p className="text-gray-300 mt-1 sm:mt-2 text-sm sm:text-base">{project.type}</p>
-                  <button className="mt-3 sm:mt-4 px-3 sm:px-4 py-2 bg-black text-white text-xs sm:text-sm font-serif rounded-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                  <button className="mt-2 sm:mt-4 px-4 py-2 sm:px-4 sm:py-2 bg-black text-white text-sm sm:text-sm font-serif rounded-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 cursor-pointer">
                     View Details
                   </button>
                 </div>

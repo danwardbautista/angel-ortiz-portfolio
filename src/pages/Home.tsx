@@ -42,15 +42,15 @@ const Home = () => {
                 "Crafting spaces that harmonize form and function through meticulous attention to detail and innovative design solutions."
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mt-6 sm:mt-8 md:mt-12">
-                <Link 
+                <Link
                   to="/residential"
-                  className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-black text-white font-serif font-medium text-base sm:text-lg rounded-lg hover:bg-gray-800 transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
+                  className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-black text-white font-serif font-medium text-base sm:text-lg text-center rounded-lg hover:bg-gray-800 transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
                 >
                   Residential Works
                 </Link>
-                <Link 
+                <Link
                   to="/commercial"
-                  className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-gray-800 text-white font-serif font-medium text-base sm:text-lg rounded-lg hover:bg-black transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:scale-105"
+                  className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-gray-800 text-white font-serif font-medium text-base sm:text-lg text-center rounded-lg hover:bg-black transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:scale-105"
                 >
                   Commercial Works
                 </Link>
@@ -88,17 +88,16 @@ const Home = () => {
           <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-12 animate-fadeInUp">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
               {/* Residential Featured */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 aspect-[4/5] sm:aspect-auto">
+              <div className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2">
                 <LazyImage
                   src={residentialProject.image}
                   alt={residentialProject.name}
                   className="w-full h-64 sm:h-80 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-end p-4 sm:p-6 md:p-8 md:transform md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-700">
-                  <div className="transition-all duration-500 md:delay-200 opacity-100 md:group-hover:opacity-100 md:opacity-0 w-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent flex items-end p-4 sm:p-6 md:p-8 lg:transform lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-700">
+                  <div className="transition-all duration-500 lg:delay-200 opacity-100 lg:group-hover:opacity-100 lg:opacity-0 w-full">
                     <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">{residentialProject.name}</h3>
                     <p className="text-gray-300 mt-2 font-serif text-sm sm:text-base">Residential Design | {residentialProject.year}</p>
-                    <p className="text-gray-200 mt-2 sm:mt-4 text-sm sm:text-base">{residentialProject.description}</p>
                     <Link to="/residential" className="mt-3 sm:mt-4 md:mt-6 inline-block px-4 py-2 sm:px-6 sm:py-3 bg-black text-white font-serif text-sm sm:text-base rounded-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
                       Explore Project
                     </Link>
@@ -107,17 +106,16 @@ const Home = () => {
               </div>
               
               {/* Commercial Featured */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 aspect-[4/5] sm:aspect-auto">
+              <div className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2">
                 <LazyImage
                   src={commercialProject.image}
                   alt={commercialProject.name}
                   className="w-full h-64 sm:h-80 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-end p-4 sm:p-6 md:p-8 md:transform md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-700">
-                  <div className="transition-all duration-500 md:delay-200 opacity-100 md:group-hover:opacity-100 md:opacity-0 w-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent flex items-end p-4 sm:p-6 md:p-8 lg:transform lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-700">
+                  <div className="transition-all duration-500 lg:delay-200 opacity-100 lg:group-hover:opacity-100 lg:opacity-0 w-full">
                     <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">{commercialProject.name}</h3>
                     <p className="text-gray-300 mt-2 font-serif text-sm sm:text-base">Commercial Design | {commercialProject.year}</p>
-                    <p className="text-gray-200 mt-2 sm:mt-4 text-sm sm:text-base">{commercialProject.description}</p>
                     <Link to="/commercial" className="mt-3 sm:mt-4 md:mt-6 inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gray-800 text-white font-serif text-sm sm:text-base rounded-lg hover:bg-black transition-all duration-300 transform hover:scale-105">
                       Explore Project
                     </Link>

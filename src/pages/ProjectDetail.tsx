@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { projects } from '../data/projects';
 import ImageViewer from '../components/ImageViewer';
 import LazyImage from '../components/LazyImage';
@@ -140,6 +140,11 @@ const ProjectDetail = () => {
   const [viewerOpen, setViewerOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
   // Extract category from the pathname (either 'residential' or 'commercial')
   const category = location.pathname.split('/')[1];
 
@@ -187,7 +192,7 @@ const ProjectDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-20">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10">
           <Link 

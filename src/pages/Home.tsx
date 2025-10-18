@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import architectPortrait from '../assets/profile.jpg';
 import residentialProjectImage from '../assets/residential/Antipolo_project/Antipolo_Proj2.webp';
 import commercialProjectImage from '../assets/commercial/bettys_iloilo/Bettys_Iloilo_Restaurant_1.webp';
+import ArchitecturalBackground from '../components/ParticleBackground';
+import LazyImage from '../components/LazyImage';
 
 const Home = () => {
   // Define featured projects with actual images
@@ -22,9 +24,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="pt-16 sm:pt-20 pb-16 sm:pb-24 md:pb-32 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center relative">
+      <section className="pt-16 sm:pt-20 pb-16 sm:pb-24 md:pb-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Architectural Background */}
+        <ArchitecturalBackground />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
             <div className="space-y-6 sm:space-y-8 z-10 animate-fadeInUp order-2 lg:order-1">
               <div className="relative">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 leading-tight">
@@ -84,7 +89,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
               {/* Residential Featured */}
               <div className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 aspect-[4/5] sm:aspect-auto">
-                <img
+                <LazyImage
                   src={residentialProject.image}
                   alt={residentialProject.name}
                   className="w-full h-64 sm:h-80 object-cover"
@@ -103,7 +108,7 @@ const Home = () => {
               
               {/* Commercial Featured */}
               <div className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 aspect-[4/5] sm:aspect-auto">
-                <img
+                <LazyImage
                   src={commercialProject.image}
                   alt={commercialProject.name}
                   className="w-full h-64 sm:h-80 object-cover"

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import LazyImage from '../components/LazyImage';
 import antipoloProject from '../assets/residential/Antipolo_project/Antipolo_Proj2.webp';
 import bacoorProject from '../assets/residential/bacoor_proj/DIS_Bacoor_proj_4.webp';
 import corinthianExecutive from '../assets/residential/corinthian_executive/corinthian_executive_proj_1.webp';
@@ -98,7 +99,7 @@ const Residential = () => {
               className="group relative overflow-hidden rounded-2xl shadow-xl shadow-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 sm:hover:-translate-y-3 block aspect-[4/5] sm:aspect-auto"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <img
+              <LazyImage
                 src={project.image}
                 alt={project.name}
                 className="w-full h-48 sm:h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"

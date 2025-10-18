@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { projects } from '../data/projects';
 import ImageViewer from '../components/ImageViewer';
+import LazyImage from '../components/LazyImage';
 
 // Import all images to make them available in the bundle
 import antipoloProject from '../assets/residential/Antipolo_project/Antipolo_Proj2.webp';
@@ -250,12 +251,12 @@ const ProjectDetail = () => {
                     <div
                       key={index}
                       className="aspect-square overflow-hidden rounded-lg cursor-pointer group"
-                      onClick={() => openViewer(index)}
                     >
-                      <img
+                      <LazyImage
                         src={galleryImage}
                         alt={`${project.name} ${index + 1}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onClick={() => openViewer(index)}
                       />
                     </div>
                   ))}

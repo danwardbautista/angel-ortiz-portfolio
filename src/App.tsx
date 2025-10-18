@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import Residential from './pages/Residential';
-import Commercial from './pages/Commercial';
-import ProjectDetail from './pages/ProjectDetail';
+
+// Lazy load route components for code splitting
+const Home = lazy(() => import('./pages/Home'));
+const Residential = lazy(() => import('./pages/Residential'));
+const Commercial = lazy(() => import('./pages/Commercial'));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -120,13 +122,24 @@ function App() {
 
       {/* Main Content */}
       <div className="pt-16 sm:pt-20">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/residential" element={<Residential />} />
-          <Route path="/commercial" element={<Commercial />} />
-          <Route path="/residential/:slug" element={<ProjectDetail />} />
-          <Route path="/commercial/:slug" element={<ProjectDetail />} />
-        </Routes>
+        <Suspense
+          fallback={
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white">
+              <div className="text-center">
+                <div className="w-16 h-16 border-4 border-black border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p className="text-gray-600 font-serif">Loading...</p>
+              </div>
+            </div>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/residential" element={<Residential />} />
+            <Route path="/commercial" element={<Commercial />} />
+            <Route path="/residential/:slug" element={<ProjectDetail />} />
+            <Route path="/commercial/:slug" element={<ProjectDetail />} />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   );

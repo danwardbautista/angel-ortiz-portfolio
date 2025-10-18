@@ -16,7 +16,7 @@ export default defineConfig({
     },
     // Increase chunk size warning limit for image-heavy app
     chunkSizeWarningLimit: 1000,
+    // Optimize image assets - inline assets smaller than 4kb
+    assetsInlineLimit: 4096,
   },
-  // Optimize image assets
-  assetsInlineLimit: 4096, // Inline assets smaller than 4kb
 })

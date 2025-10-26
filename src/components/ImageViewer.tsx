@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import LazyImage from './LazyImage';
 
 interface ImageViewerProps {
   images: string[];
@@ -76,11 +77,11 @@ const ImageViewer = ({ images, currentIndex, onClose, onNext, onPrevious, projec
 
       {/* Main image */}
       <div className="relative max-w-7xl max-h-screen w-full h-full flex items-center justify-center p-4 sm:p-12">
-        <img
+        <LazyImage
           src={images[currentIndex]}
           alt={`${projectName} ${currentIndex + 1}`}
           className="max-w-full max-h-full object-contain animate-fadeIn"
-          onClick={(e) => e.stopPropagation()}
+          onClick={() => {}}
         />
       </div>
 

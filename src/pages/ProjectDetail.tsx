@@ -205,12 +205,12 @@ const ProjectDetail = () => {
         
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="relative h-64 sm:h-80 md:h-96">
-            <img 
-              src={projectImage} 
-              alt={project.name} 
+            <LazyImage
+              src={projectImage}
+              alt={project.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 sm:p-6 md:p-8">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 sm:p-6 md:p-8 pointer-events-none">
               <div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white">{project.name}</h1>
                 <p className="text-base sm:text-lg md:text-xl text-gray-200 mt-1 sm:mt-2">{project.type} | {project.year || '2024'}</p>

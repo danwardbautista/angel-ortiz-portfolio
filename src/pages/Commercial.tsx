@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import LazyImage from '../components/LazyImage';
+import { projects } from '../data/projects';
+
+// Import all images to make them available in the bundle
 import bettysIloilo from '../assets/commercial/bettys_iloilo/Bettys_Iloilo_Restaurant_1.webp';
 import cafeTropica from '../assets/commercial/cafe_tropica/cafe_tropica_1.webp';
 import hCafe from '../assets/commercial/h_cafe/Hcafe_1.webp';
@@ -9,74 +12,27 @@ import maq from '../assets/commercial/maq/DIS_MAQ_1.webp';
 import ohLove from '../assets/commercial/Oh_love/oh_love_ka.webp';
 import prettySalon from '../assets/commercial/pretty_salon/pretty1.webp';
 
+// Create a mapping of image paths to imported images
+const imageMap: { [key: string]: string } = {
+  '../assets/commercial/bettys_iloilo/Bettys_Iloilo_Restaurant_1.webp': bettysIloilo,
+  '../assets/commercial/cafe_tropica/cafe_tropica_1.webp': cafeTropica,
+  '../assets/commercial/h_cafe/Hcafe_1.webp': hCafe,
+  '../assets/commercial/kiosks_and_inline/heirloomkiosk_1.webp': kiosksInline,
+  '../assets/commercial/local_restaurant/Local_restaurant_d3.webp': localRestaurant,
+  '../assets/commercial/maq/DIS_MAQ_1.webp': maq,
+  '../assets/commercial/Oh_love/oh_love_ka.webp': ohLove,
+  '../assets/commercial/pretty_salon/pretty1.webp': prettySalon,
+};
+
 const Commercial = () => {
-  // Define commercial projects with actual images
-  const projects = [
-    {
-      id: 1,
-      name: "Betty's Iloilo Restaurant",
-      slug: "bettys-iloilo-restaurant",  // Add slug for linking
-      image: bettysIloilo,
-      description: "Modern restaurant design with elegant finishes",
-      type: "Restaurant Design"
-    },
-    {
-      id: 2,
-      name: "Cafe Tropica",
-      slug: "cafe-tropica",  // Add slug for linking
-      image: cafeTropica,
-      description: "Tropical-themed cafe space",
-      type: "Cafe Design"
-    },
-    {
-      id: 3,
-      name: "H Cafe",
-      slug: "h-cafe",  // Add slug for linking
-      image: hCafe,
-      description: "Contemporary cafe with minimalist aesthetics",
-      type: "Cafe Design"
-    },
-    {
-      id: 4,
-      name: "Kiosks and In-line",
-      slug: "kiosks-and-in-line",  // Add slug for linking
-      image: kiosksInline,
-      description: "Retail space design solutions",
-      type: "Retail Design"
-    },
-    {
-      id: 5,
-      name: "Local Restaurant",
-      slug: "local-restaurant",  // Add slug for linking
-      image: localRestaurant,
-      description: "Cozy restaurant with local charm",
-      type: "Restaurant Design"
-    },
-    {
-      id: 6,
-      name: "MAQ",
-      slug: "maq",  // Add slug for linking
-      image: maq,
-      description: "Modern retail space design",
-      type: "Retail Design"
-    },
-    {
-      id: 7,
-      name: "Oh Love",
-      slug: "oh-love",  // Add slug for linking
-      image: ohLove,
-      description: "Romantic themed commercial space",
-      type: "Themed Design"
-    },
-    {
-      id: 8,
-      name: "Pretty Salon",
-      slug: "pretty-salon",  // Add slug for linking
-      image: prettySalon,
-      description: "Elegant beauty salon design",
-      type: "Beauty Space Design"
-    }
-  ];
+  // Filter commercial projects from centralized data
+  const commercialProjects = projects.filter(p => p.category === 'commercial');
+  
+  // Map images from centralized data to imported images
+  const projectsWithImages = commercialProjects.map(project => ({
+    ...project,
+    image: imageMap[project.image] || project.image
+  }));
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-8 sm:py-12 md:py-16 lg:py-20">
@@ -92,7 +48,7 @@ const Commercial = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 animate-fadeInUp">
-          {projects.map((project, index) => (
+          {projectsWithImages.map((project, index) => (
             <Link
               to={`/commercial/${project.slug}`}
               key={project.id}

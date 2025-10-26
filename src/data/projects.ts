@@ -32,7 +32,7 @@ export const projects = [
     name: "Bacoor Project",
     slug: "bacoor-project",
     image: "../assets/residential/bacoor_proj/DIS_Bacoor_proj_4.webp",
-    description: "Blending simplicity and warmth, I designed and 3D visualized a home that mirrors the client's desire for a soft, clean, and timeless space.",
+    description: "Blending simplicity and warmth, As designer and 3D visualizer, I created a home that mirrors the client's desire for a soft, clean, and timeless space.",
     type: "Soft and Clean Design",
     year: "2024",
     category: "residential",

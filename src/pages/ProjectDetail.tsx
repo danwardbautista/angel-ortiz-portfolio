@@ -30,6 +30,15 @@ import luxuryDining2 from '../assets/residential/luxury_dining/DIS_luxurydining2
 import restHouse1 from '../assets/residential/rest_house_living_area/resth_2.webp';
 import restHouse2 from '../assets/residential/rest_house_living_area/resth_3.webp';
 import restHouse3 from '../assets/residential/rest_house_living_area/DIS_resth_1.webp';
+import avida1 from '../assets/residential/avida_towers/AVIDA1.webp';
+import avida2 from '../assets/residential/avida_towers/AVIDA2.webp';
+import avida3 from '../assets/residential/avida_towers/AVIDA3.webp';
+import avida4 from '../assets/residential/avida_towers/AVIDA4.webp';
+import avida5 from '../assets/residential/avida_towers/AVIDA5.webp';
+import avida6 from '../assets/residential/avida_towers/AVIDA6_DIS.webp';
+import avida7 from '../assets/residential/avida_towers/AVIDA7.webp';
+import avida8 from '../assets/residential/avida_towers/AVIDA8.webp';
+import avida9 from '../assets/residential/avida_towers/AVIDA9.webp';
 import tropical1 from '../assets/residential/tropical_design_house/Tropical_design_Exterior_perspective_3_-_Photo.webp';
 import tropical2 from '../assets/residential/tropical_design_house/DIS_Tropical_design_Exterior_perspective_1_-_Photo.webp';
 import bettys1 from '../assets/commercial/bettys_iloilo/Bettys_Iloilo_Restaurant_1.webp';
@@ -94,6 +103,15 @@ const imageMap: { [key: string]: string } = {
   '../assets/residential/rest_house_living_area/resth_2.webp': restHouse1,
   '../assets/residential/rest_house_living_area/resth_3.webp': restHouse2,
   '../assets/residential/rest_house_living_area/DIS_resth_1.webp': restHouse3,
+  '../assets/residential/avida_towers/AVIDA1.webp': avida1,
+  '../assets/residential/avida_towers/AVIDA2.webp': avida2,
+  '../assets/residential/avida_towers/AVIDA3.webp': avida3,
+  '../assets/residential/avida_towers/AVIDA4.webp': avida4,
+  '../assets/residential/avida_towers/AVIDA5.webp': avida5,
+  '../assets/residential/avida_towers/AVIDA6_DIS.webp': avida6,
+  '../assets/residential/avida_towers/AVIDA7.webp': avida7,
+  '../assets/residential/avida_towers/AVIDA8.webp': avida8,
+  '../assets/residential/avida_towers/AVIDA9.webp': avida9,
   '../assets/residential/tropical_design_house/Tropical_design_Exterior_perspective_3_-_Photo.webp': tropical1,
   '../assets/residential/tropical_design_house/DIS_Tropical_design_Exterior_perspective_1_-_Photo.webp': tropical2,
   

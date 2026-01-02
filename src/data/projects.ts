@@ -168,24 +168,24 @@ export const projects = [
   },
   {
     id: 7,
-    name: "Modern Tropical House",
+    name: "REST HOUSE: LIVING AREA",
     slug: "rest-house-living",
     image: "../assets/residential/rest_house_living_area/DIS_resth_1.webp",
-    description: "The client reached out to me to redesign the façade of their upcoming home. They envisioned a modern look infused with green elements to reflect their love for plants and nature.",
-    type: "Modern Tropical Design",
+    description: "This is one of my design practices where I envisioned a rest house featuring a coastal chic living area. The space was designed to complement the large window framing the serene beauty of the sea.",
+    type: "Coastal chic design style",
     year: "2024",
     category: "residential",
     details: {
-      location: "Horseshoe Village, Quezon City",
-      size: "220 sqm",
+      location: "N/A",
+      size: "N/A",
       year: "2024",
-      architect: "Angel Ortiz"
+      architect: "Designer and 3D visualizer"
     },
     features: [
-      "Modern tropical design",
+      "Coastal chic design style",
       "Designer and 3D visualizer",
-      "Green elements and plants",
-      "Nature-infused façade"
+      "Sea view through large window",
+      "Rest house concept"
     ],
     gallery: [
       "../assets/residential/rest_house_living_area/resth_2.webp",
@@ -197,16 +197,15 @@ export const projects = [
     id: 8,
     name: "Avida Towers Project",
     slug: "avida-towers-project",
-    image: "../assets/residential/tropical_design_house/DIS_Tropical_design_Exterior_perspective_1_-_Photo.webp",
+    image: "../assets/residential/avida_towers/AVIDA6_DIS.webp",
     description: "This project reimagines a condo unit with a chic design that captures the owner's personality—balancing style, comfort, and individuality in every detail.",
-    type: "Chic Design",
+    type: "Chic design style",
     year: "2023",
     category: "residential",
     details: {
-      location: "Avida Towers Makati Southpoint",
-      size: "32 Sqm",
-      year: "2023",
-      architect: "Angel Ortiz"
+      location: "Avida towers Makati Southpoint",
+      size: "32",
+      year: "2023"
     },
     features: [
       "Chic design style",
@@ -215,30 +214,36 @@ export const projects = [
       "Style, comfort, and individuality"
     ],
     gallery: [
-      "../assets/residential/tropical_design_house/Tropical_design_Exterior_perspective_3_-_Photo.webp",
-      "../assets/residential/tropical_design_house/DIS_Tropical_design_Exterior_perspective_1_-_Photo.webp"
+      "../assets/residential/avida_towers/AVIDA1.webp",
+      "../assets/residential/avida_towers/AVIDA2.webp",
+      "../assets/residential/avida_towers/AVIDA3.webp",
+      "../assets/residential/avida_towers/AVIDA4.webp",
+      "../assets/residential/avida_towers/AVIDA5.webp",
+      "../assets/residential/avida_towers/AVIDA6_DIS.webp",
+      "../assets/residential/avida_towers/AVIDA7.webp",
+      "../assets/residential/avida_towers/AVIDA8.webp",
+      "../assets/residential/avida_towers/AVIDA9.webp"
     ]
   },
   {
     id: 9,
-    name: "Valenzuela Project",
-    slug: "valenzuela-project",
+    name: "Modern Tropical House",
+    slug: "modern-tropical-house",
     image: "../assets/residential/tropical_design_house/DIS_Tropical_design_Exterior_perspective_1_-_Photo.webp",
-    description: "This project showcases my CAD drafting work, where I developed a full set of architectural drawings from a PDF reference. I converted the file into editable format and revised details to meet permit requirements.",
-    type: "AutoCAD Drafting",
+    description: "The client reached out to me to redesign the façade of their upcoming home. They envisioned a modern look infused with green elements to reflect their love for plants and nature.",
+    type: "Modern Tropical Design",
     year: "2024",
     category: "residential",
     details: {
-      location: "Tamaraw Hills, Valenzuela City",
-      size: "180 sqm",
-      year: "2024",
-      architect: "Angel Ortiz"
+      location: "Horseshoe Village, Quezon City",
+      size: "220 sqm",
+      year: "2024"
     },
     features: [
-      "AutoCAD drafting",
-      "PDF to CAD conversion",
-      "Permit requirement compliance",
-      "Full architectural drawing set"
+      "Modern Tropical Design",
+      "Designer and 3D visualizer",
+      "Green elements and plants",
+      "Nature-infused façade"
     ],
     gallery: [
       "../assets/residential/tropical_design_house/Tropical_design_Exterior_perspective_3_-_Photo.webp",

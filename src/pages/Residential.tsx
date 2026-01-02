@@ -10,6 +10,7 @@ import filinvest1 from '../assets/residential/filinvest/filinvest_proj_1.webp';
 import laspinas1 from '../assets/residential/laspinas_project/DIS_Las_pinas_apartment_2.webp';
 import luxuryDining1 from '../assets/residential/luxury_dining/DIS_luxurydining2.webp';
 import restHouse1 from '../assets/residential/rest_house_living_area/DIS_resth_1.webp';
+import avida6 from '../assets/residential/avida_towers/AVIDA6_DIS.webp';
 import tropical1 from '../assets/residential/tropical_design_house/DIS_Tropical_design_Exterior_perspective_1_-_Photo.webp';
 
 // Create a mapping of image paths to imported images
@@ -21,6 +22,7 @@ const imageMap: { [key: string]: string } = {
   '../assets/residential/laspinas_project/DIS_Las_pinas_apartment_2.webp': laspinas1,
   '../assets/residential/luxury_dining/DIS_luxurydining2.webp': luxuryDining1,
   '../assets/residential/rest_house_living_area/DIS_resth_1.webp': restHouse1,
+  '../assets/residential/avida_towers/AVIDA6_DIS.webp': avida6,
   '../assets/residential/tropical_design_house/DIS_Tropical_design_Exterior_perspective_1_-_Photo.webp': tropical1,
 };
 
